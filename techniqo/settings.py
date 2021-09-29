@@ -23,9 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '3#^h*uthh6ttc^u^kp(xhcpz_0h6+=rqu6-k2&7pzh8$48cc4w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["45.80.181.102", "techniqo.in", "127.0.0.1"]
+ALLOWED_HOSTS = ["45.80.181.102", "techniqo.in", "127.0.0.1",
+                 "techniqo.herokuapp.com"]
 
 
 # Application definition
@@ -53,6 +54,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
